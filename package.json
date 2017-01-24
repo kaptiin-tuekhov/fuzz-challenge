@@ -11,22 +11,29 @@
     "build": "BABEL_ENV=production babel --out-dir=dist index.js"
   },
   "devDependencies": {
-    "ava": "^0.17.0"
-  },
-  "dependencies": {
+    "ava": "^0.17.0",
+    "browser-env": "^2.0.19",
+    "jquery": "^3.1.1",
     "nyc": "^10.1.2"
   },
   "babel": {
-        "presets": ["es2015"],
-        "plugins": ["transform-runtime"],
-        "ignore": "test.js",
-        "env": {
-            "development": {
-                "sourceMaps": "inline"
-            }
-        }
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ],
+    "ignore": "test.js",
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
   },
   "ava": {
-    "require": ["babel-core/register"]
+    "require": [
+      "babel-core/register",
+      "./test/helpers/setup-browser-env.js"
+    ]
   }
 }
