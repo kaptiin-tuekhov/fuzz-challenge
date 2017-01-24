@@ -1,1 +1,3 @@
 jquery.min.js
+coverage
+.nyc_output
